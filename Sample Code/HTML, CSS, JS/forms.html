@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Forms</title>
+	
+	<script>
+		function getfname() {
+			var fname = document.getElementById('fname');
+			console.dir(fname);
+		}
+	
+		function setfname(){
+			var fname = document.getElementById('fname');
+			fname.value = "MoFo";
+		}
+	</script>
+</head>
+<body>
+	<form action="#" method="POST">
+		<div>
+		<label for="fname">First Name:</label>
+		<input type="text" name="fname" id="fname" placeholder="First Name">
+		</div>
+		
+		<div>
+		<label for="lname">Last Name:</label>
+		<input type="text" name="lname" placeholder="Last Name">
+		</div>
+		
+		<div>
+			Password: <input type="password" name="pass" maxlength="10" placeholder="password" required>
+		</div>
+		
+		<hr>
+		
+		<button type="button" onclick="getfname()">Get First Name</button>
+		<button type="button" onclick="setfname()">Set First Name</button>
+		
+		<hr>
+		<div>
+			<input type="submit" value="Submit"
+		</div>
+		
+	</form>
+</body>	
+</html>

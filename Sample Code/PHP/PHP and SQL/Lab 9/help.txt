@@ -1,0 +1,45 @@
+--query 1
+SELECT name10 FROM tl_2010_us_state10
+WHERE ST_Intersects(coords, ST_SetSRID(ST_MakeBox2D(ST_Point(-98, 39), ST_Point(-90, 43)), 4326))
+ORDER BY name10 ASC;
+
+--query 2
+SELECT a2.stusps10, a2.name10
+FROM tl_2010_us_state10 AS a1, 
+	tl_2010_us_state10 AS a2 
+WHERE ST_Touches(a1.coords, a2.coords) 
+	AND a1.name10 = 'Colorado'
+ORDER BY a2.name10 ASC;
+
+--query 3
+SELECT a2.name10
+FROM tl_2010_us_state10 AS a1, 
+	tl_2010_us_uac10 AS a2 
+WHERE ST_Contains(a1.coords, a2.coords)
+	AND a1.name10 = 'Missouri'
+ORDER BY a2.name10;
+
+--query 4
+SELECT a1.name10, ((a1.aland10+a1.awater10)/1000000) AS area 
+FROM tl_2010_us_uac10 AS a1,
+	tl_2010_us_state10 AS a2
+WHERE ST_Overlaps(a1.coords, a2.coords)
+	AND a2.name10 = 'Illinois'
+ORDER BY area DESC;
+
+--query 5
+SELECT a1.name10, a2.name10
+FROM tl_2010_us_uac10 AS a1,
+	tl_2010_us_uac10 AS a2
+WHERE ST_Touches(a1.coords, a2.coords)
+	AND (a1.gid>a2.gid);
+	
+--query 6
+SELECT a1.name10, COUNT(*) AS stateCount 
+FROM tl_2010_us_uac10 AS a1, 
+	tl_2010_us_state10 AS a2 
+WHERE ((a1.aland10 + a1.awater10)/1000000) > 1000 
+	AND ST_Intersects(a1.coords, a2.coords) 
+GROUP BY a1.name10
+HAVING COUNT(*) > 1
+ORDER BY COUNT(*) DESC, a1.name10 ASC;

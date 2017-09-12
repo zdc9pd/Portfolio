@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Variables</title>
+	<script>
+	/*
+		JavaScript is an untyped language.
+		That means that there are no type declarations; you don't need to specify whether a variable is a string, double, integer, etc.
+	*/
+	
+	// To declare a variable, use the keyword "var"
+	var number;
+	// You can assign it any value
+	number = 0;
+	
+	// Declaration + Assignment
+	var number2 = 0;
+	
+	// Real Numbers
+	var number3 = 3.14;
+	
+	// Booleans
+	var tOrF = true;
+	tOrF = false;
+	
+	// Strings
+	var myString = "Hello World";
+	var myString2 = 'hello again';
+	
+	// Objects (like Math and Date)
+	var x = Math.PI;
+
+	// Object Methods
+	var y = Math.round(3.4);
+	
+	// We can log variables to the console to check their values
+	console.log(y);
+	
+	
+	
+	// Arrays
+	var myArray = new Array();
+	// [] is an array literal; it's the same as the myArray declaration above.
+	var myArray2 = [];
+	
+	// You can add elements to an array like this:
+	myArray2[0] = 1;
+	myArray2[1] = 2;
+	
+	// Or this:
+	myArray2.push(3);
+	
+	// We can add all kinds of data types. Mixing works!
+	myArray2[3] = "four";
+	
+	// console.dir allows us to inspect the contents of myArray2 as a tree structure
+	console.dir(myArray2);
+	
+	
+	
+	// We can define a function like below. This is called a function declaration:
+	/*
+	function pageLoaded() {
+		alert("The page has loaded!");
+	}
+	*/
+	
+	// Or functions can be treated like variables. This is called a function expression:
+	var pageLoaded = function() {
+		alert("The page has loaded!!!");
+	}
+	// Both functions are identical. Also, note that a function without a name (like the one assigned to 'pageLoaded' in the function expression above) is called an anonymous function.
+	
+	// In JavaScript, functions are first-class citizens. That means you can store them in variables, pass them into other functions as arguments, organize them into arrays, store them in objects, etc.
+	// Here I pass 'pageLoaded' to a new var called 'pageReallyDidInFactLoad'
+	var pageReallyDidInFactLoad = pageLoaded;
+	</script>
+</head>
+<body onload="pageReallyDidInFactLoad()">
+</body>
+</html>

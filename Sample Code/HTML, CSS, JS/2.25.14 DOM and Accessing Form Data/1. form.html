@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms</title>
+</head>
+<body>
+	<!-- Reference: http://www.w3schools.com/html/html_forms.asp -->
+	<form action="#" method="POST">
+		<!-- Text Input -->
+		<div>
+			<label for="fname">First Name:</label>
+			<input type="text" id="fname" name="fname" value="First Name">
+		</div>
+		<div>
+			<label for="lname">Last Name:</label>
+			<input type="text" id="lname" name="lname" placeholder="Last Name">
+		</div>
+		
+		
+		<!-- Password -->
+		<div>
+			<input type="password" name="pass" maxlength="10" required>
+		</div>
+		
+		
+		<!-- Radio Buttons -->
+		<div>
+			<h3>What is your favorite dinosaur?</h3>
+			<div>
+				<input type="radio" id="trex" name="dinosaur" value="T-Rex">
+				<label for="trex">T-Rex</label>
+			</div>
+			<div>
+				<input type="radio" id="stego" name="dinosaur" value="Stegosaurus">
+				<label for="stego">Stegosaurus</label>
+			</div>
+			<div>
+				<input type="radio" id="iguan" name="dinosaur" value="Iguanodon" checked>
+				<label for="iguan">Iguanodon</label>
+			</div>
+		</div>
+		
+		
+		<!-- Checkboxes -->
+		<div>
+			<h3>What do you like to do?</h3>
+			<div>
+				<input type="checkbox" id="sleeping" name="interests[]" value="sleeping" checked>
+				<label for="sleeping">Sleeping</label>
+			</div>
+			<div>
+				<input type="checkbox" id="studying" name="interests[]" value="studying" checked>
+				<label for="studying">Studying</label>
+			</div>
+			<div>
+				<input type="checkbox" id="everything" name="interests[]" value="everything">
+				<label for="everything">Everything</label>
+			</div>
+		</div>
+		
+		
+		<!-- Select -->
+		<div>
+			<h3>What's your major?</h3>
+			<select name="major">
+				<option value="BSIT">Bachelor of Science in IT</option>
+				<option value="BSCS" selected>Bachelor of Science in CS</option>
+				<option value="BACS">Bachelor of Arts in CS</option>
+				<option value="BSCSIT">Bachelor of Science in CS and IT</option>
+			</select>
+		</div>
+		
+		
+		<!-- Multiple Select -->
+		<div>
+			<h3>What do you like to eat?</h3>
+			<select name="foods[]" multiple>
+				<option value="rijsttafel">Rijsttafel</option>
+				<option value="pancakes">Pancakes</option>
+				<option value="haggis">Haggis</option>
+				<option value="grits">Grits</option>
+			</select>
+		</div>
+		
+		
+		<!-- Textarea -->
+		<div>
+			<h3>Comments?</h3>
+			<textarea name="comments">I like CS2830, but my instructor is kinda weird!</textarea>
+		</div>
+		
+		
+		<!-- Submit -->
+		<div>
+			<input type="submit" name="submit" value="Submit">
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Onload</title>
+	<!--<script src="jquery-1.11.0.js">	
+	</script> -->
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	
+	<script>
+		//Query.method();
+		//Query.doThat();
+		
+	/*	console.dir(jQuery);
+		console.dir($);
+		
+		$.noConflict();
+		console.dir($);
+		
+		var jq = jQuery;
+		
+	*/
+	/*
+	function pageloaded(){
+		document.getElementById("message").innerHTML = "onload: the page is ready";
+	}
+	*/
+	$(document).ready(function(){
+		alert("the DOM has loaded");
+		$("#message").html("jQuery changed this");
+	});
+	
+	</script>
+
+</head>
+<body onload="pageloaded()">
+	<p id="message">Ahh</p>
+</body>
+</html>

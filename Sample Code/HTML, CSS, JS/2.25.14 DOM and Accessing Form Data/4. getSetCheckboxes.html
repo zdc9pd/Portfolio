@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get and Set Checkboxes</title>
+	<script>
+		
+		function getAllCheck() {
+			var checkboxObjects = document.getElementsByName('interests[]');
+			
+			for (var i = 0; i < checkboxObjects.length; i++) {
+				console.log(checkboxObjects[i].id + ' = ' + checkboxObjects[i].checked);
+			}
+		}
+		
+		function toggleCheck() {
+			var checkboxObject = document.getElementById('sleeping');
+			
+			/*
+			if (checkboxObject.checked) {
+				checkboxObject.checked = false;
+			}
+			else {
+				checkboxObject.checked = true;
+			}
+			*/
+			
+			// This is an alternative to the if/else above; it's called a ternary operator:
+			(checkboxObject.checked) ? checkboxObject.checked = false : checkboxObject.checked = true;
+		}
+		
+		function toggleAllCheck() {
+			var checkboxObjects = document.getElementsByName('interests[]');
+			for (var i = 0; i < checkboxObjects.length; i++) {
+				(checkboxObjects[i].checked) ? checkboxObjects[i].checked = false : checkboxObjects[i].checked = true;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="#" method="POST">
+		<!-- Checkboxes -->
+		<div>
+			<h3>What do you like to do?</h3>
+			<div>
+				<input type="checkbox" id="sleeping" name="interests[]" value="sleeping" checked>
+				<label for="sleeping">Sleeping</label>
+			</div>
+			<div>
+				<input type="checkbox" id="studying" name="interests[]" value="studying" checked>
+				<label for="studying">Studying</label>
+			</div>
+			<div>
+				<input type="checkbox" id="everything" name="interests[]" value="everything">
+				<label for="everything">Everything</label>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<button type="button" onclick="getAllCheck()">Get All Checkboxes</button>
+		<button type="button" onclick="toggleCheck()">Toggle Single Checkbox</button>
+		<button type="button" onclick="toggleAllCheck()">Toggle All Checkboxes</button>
+	</form>
+</body>
+</html>

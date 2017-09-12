@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get and Set Select</title>
+	<script>
+	function getSelect() {
+		var selectObject = document.getElementById('major');
+		console.dir(selectObject);
+		
+		console.log("Selected = " + selectObject.value);
+		
+		console.log(selectObject.options[selectObject.selectedIndex].innerHTML);
+	}
+
+	function setSelect() {
+		var selectObject = document.getElementById('major');
+		selectObject.selectedIndex = 0;
+	}
+
+	function getMultipleSelect() {
+		var selectObject = document.getElementById('foods');
+		console.dir(selectObject);
+		
+		for (var i = 0; i < selectObject.options.length; i++) {
+			console.log(selectObject.options[i].value + ' = ' + selectObject.options[i].selected);
+		}
+	}
+
+	function setMultipleSelect() {
+		var selectObject = document.getElementById('foods');
+		
+		for (var i = 0; i < selectObject.options.length; i++) {
+			selectObject.options[i].selected = false;
+		}
+		
+		selectObject.options[0].selected = true;
+		selectObject.options[2].selected = true;
+	}
+	</script>
+</head>
+<body>
+	<form action="#" method="POST">
+		<!-- Select -->
+		<div>
+			<h3>What's your major?</h3>
+			<select id="major" name="major">
+				<option value="BSIT">Bachelor of Science in IT</option>
+				<option value="BSCS" selected>Bachelor of Science in CS</option>
+				<option value="BACS">Bachelor of Arts in CS</option>
+				<option value="BSCSIT">Bachelor of Science in CS and IT</option>
+			</select>
+		</div>
+		
+		
+		<!-- Multiple Select -->
+		<div>
+			<h3>What do you like to eat?</h3>
+			<select id="foods" name="foods[]" multiple>
+				<option value="rijsttafel">Rijsttafel</option>
+				<option value="pancakes">Pancakes</option>
+				<option value="haggis">Haggis</option>
+				<option value="grits">Grits</option>
+			</select>
+		</div>
+		
+		<hr>
+		
+		<button type="button" onclick="getSelect()">Get Select</button>
+		<button type="button" onclick="setSelect()">Set Select</button>
+		
+		<button type="button" onclick="getMultipleSelect()">Get Multiple Select</button>
+		<button type="button" onclick="setMultipleSelect()">Set Multiple Select</button>
+	</form>
+</body>
+</html>

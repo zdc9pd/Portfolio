@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events and Functions</title>
+	<script>
+	// We can execute JavaScript programmatically or respond to events.
+	// For instance, updateDate will run when a button is clicked.
+	/*
+	function updateDate() {
+		document.getElementById("theDate").innerHTML = Date();
+	}
+	*/
+	
+	// updateDate works, but only for #theDate. updateDate2 is more versatile:
+	function updateDate2(id) {
+		document.getElementById(id).innerHTML = Date();
+	}
+	
+	// updateDate3 accepts "this" as a parameter. "this" is a DOM object representing #theDate.
+	// DOM reference: http://www.w3schools.com/js/js_htmldom.asp
+	function updateDate3(domObject) {
+		domObject.innerHTML = Date();
+	}
+	</script>
+</head>
+<body>
+	<p id="theDate" onclick="updateDate2('theDate')">Date information goes here.</p>
+	<p id="theDate2" onclick="updateDate3(this)">And more date information here.</p>
+</body>
+</html>

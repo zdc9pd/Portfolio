@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Controlled Background</title>
+	<style>
+	body {
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-color: #000;
+		background-size: cover;
+	}
+	</style>
+	<script>
+	// The following is a fun example that ties the everything together.
+	function pageLoaded() {
+		var d = new Date();
+		var hours = d.getHours();
+		var content = document.getElementById("content");
+		
+		// From 7 am till 9 am => dawn
+		if (hours >= 7 && hours < 9) {
+			content.style.backgroundImage = "url(images/dawn.png)"
+		}
+		// From 9am till 6pm => day
+		else if (hours >= 9 && hours < 18) {
+			content.style.backgroundImage = "url(images/day.png)"
+		}
+		// From 6pm till 8pm => dusk
+		else if (hours >= 18 && hours < 20) {
+			content.style.backgroundImage = "url(images/dusk.png)"
+		}
+		// Else night
+		else {
+			content.style.backgroundImage = "url(images/night.png)"
+		}
+	}
+	</script>
+</head>
+<body id="content" onload="pageLoaded()">
+</body>
+</html>

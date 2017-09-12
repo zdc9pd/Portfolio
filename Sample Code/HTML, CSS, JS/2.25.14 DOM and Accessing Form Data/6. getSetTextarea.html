@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get and Set Textarea</title>
+	<script>
+	function getTextarea() {
+		var textareaObject = document.getElementById('comments');
+		//console.log(textareaObject.innerHTML);
+		console.log(textareaObject.value);
+	}
+
+	function setTextarea() {
+		var textareaObject = document.getElementById('comments');
+		//textareaObject.innerHTML = 'something new';
+		textareaObject.value = 'something new!';
+	}
+
+	function clearTextarea() {
+		var textareaObject = document.getElementById('comments');
+		//textareaObject.innerHTML = '';
+		textareaObject.value = '';
+	}
+	</script>
+</head>
+<body>
+	<form action="#" method="POST">
+		<!-- Textarea -->
+		<div>
+			<h3>Comments?</h3>
+			<textarea id="comments" name="comments">I like CS2830, but my instructor is kinda weird!</textarea>
+		</div>
+		
+		<hr>
+		
+		<button type="button" onclick="getTextarea()">Get Textarea</button>
+		<button type="button" onclick="setTextarea()">Set Textarea</button>
+		<button type="button" onclick="clearTextarea()">Clear Textarea</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order Matters</title>
+	<script>
+		// This won't work because "#content" does not exist yet.
+		var element = document.getElementById("content");
+		element.innerHTML = "I am before the p tag. This will not work.";
+	</script>
+</head>
+<body>
+	<p id="content">Default Text</p>
+	
+	<script>
+		// This will work because "#content" exists by this point in the document
+		var element = document.getElementById("content");
+		element.innerHTML = "I am after the p tag. This will work!";
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get and Set Text</title>
+	<script>
+		function getfname() {
+			var fname = document.getElementById('fname');
+			// We can inspect our DOM object using console.dir()
+			console.dir(fname);
+			
+			console.log(fname.id + ' = ' + fname.value);
+		}
+		
+		function setfname() {
+			var fname = document.getElementById('fname');
+			fname.value = "Stevekarl";
+		}
+		
+		function getValue(id) {
+			var domObject = document.getElementById(id);
+			console.log(domObject.value);
+		}
+		
+		function setValue(id) {
+			document.getElementById(id).value = "Smith";
+		}
+	</script>
+</head>
+<body>
+	<form action="#" method="POST">
+		<!-- Text Input -->
+		<div>
+			<label for="fname">First Name:</label>
+			<input type="text" id="fname" name="fname" value="First Name">
+		</div>
+		<div>
+			<label for="lname">Last Name:</label>
+			<input type="text" id="lname" name="lname" placeholder="Last Name">
+		</div>
+		
+		<!-- Password -->
+		<div>
+			<input type="password" id="pass" name="pass" maxlength="10" required>
+		</div>
+		
+		<hr>
+		
+		<button type="button" onclick="getfname()">Get fname</button>
+		<button type="button" onclick="setfname()">Set fname</button>
+		
+		<button type="button" onclick="getValue('lname')">Get Value</button>
+		<button type="button" onclick="setValue('lname')">Set Value</button>
+	</form>
+</body>
+</html>

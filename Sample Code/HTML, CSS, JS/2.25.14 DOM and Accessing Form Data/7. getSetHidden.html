@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get and Set Hidden</title>
+	<script>
+	function getHidden() {
+		alert(document.getElementById('hiddenData').value);
+	}
+	function setHidden() {
+		document.getElementById('hiddenData').value = "The value has changed!";
+	}
+	</script>
+</head>
+<body>
+	<form action="#" method="POST">
+		<input type="hidden" id="hiddenData" name="hiddenData" value="This data is not visible">
+		
+		<hr>
+		
+		<button type="button" onclick="getHidden()">Get Hidden</button>
+		<button type="button" onclick="setHidden()">Set Hidden</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Scope</title>
+	<script>
+	/*
+		Any var declared in a function is local to that function.
+		Any var declared outside a function is in the global namespace.
+	*/
+	
+		// Celebrity is global
+		var celebrity = "I'm globally known!!";
+		console.log(celebrity);
+		
+		function makeBob() {
+			// bob is local to this function
+			var bob = "I am bob";
+			
+			// This 'celebrity' variable is also local
+			// It has the same name as our global variable, but is separate
+			var celebrity = "New celebrity";
+			
+			// To get these local variables, we'd have to return them
+			return bob;
+		}
+		
+		// Error: this won't work because bob is a local variable
+		console.log(bob);
+		// To get bob, we'd have to call his function and return him
+		console.log(makeBob());
+	</script>
+</head>
+<body>
+	<script>
+		// celebrity is global, so we have access to it, even in <script> blocks later in the document
+		console.log(celebrity);
+		
+		
+		// So, what will happen in a for loop?
+		// Are i and inForLoop local or global?
+		for (var i = 0; i < 10; i++) {
+			var inForLoop = "I am in a for loop";
+		}
+		
+		// They are global because they are not within a function
+		console.log(i);
+		console.log(inForLoop);
+	</script>
+</body>
+</html>

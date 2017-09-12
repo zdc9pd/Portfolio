@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript onload</title>
+	<script>
+		function pageLoaded() {
+			var element = document.getElementById("content");
+			element.innerHTML = "Hello, this is changed!";
+		}
+	</script>
+</head>
+<!--
+	The JavaScript function "pageLoaded()" is invoked when the DOM loads
+	Reference: http://www.w3schools.com/jsref/event_body_onload.asp
+-->
+<body onload="pageLoaded()">
+	<p id="content">Default Text</p>
+</body>
+</html>

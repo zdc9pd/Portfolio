@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+	<title>Onload </title>
+	<script type="text/javascript">
+		/*function load() {
+			var element = document.getElementById("content");
+			element.innerHTML = "The document is loaded";
+			//alert("Body has loaded");
+			console.log("Hello world");
+			console.dir(element);
+		}
+		*/
+		function updateDate() {
+			document.getElementById("theDate").innerHTML = Date();
+		}
+		
+		function updateDate2() {
+			document.getElementById("theDate2").innerHTML = Date();
+		}
+		
+		function updateDate3(thing) {
+			comsole.dir(thing);
+		}
+		
+	</script>
+	<script>
+	var myArray = new Array();
+	var myArray2 = [];
+	
+	myArray2[0] = 1;
+	myArray2[1] = 2;
+	myArray2.push(myArray);
+	
+	console.log(myArray2);
+	</script>
+	
+</head>
+<body onload = "load()">
+	<p id ="content">Default Text</p>
+	<p id="theDate"  onclick="updateDate()">Date Info</p>
+	<p id="theDate2"  onclick="updateDate2()">Date Info</p>
+	
+
+</body>	
+</HTML>
